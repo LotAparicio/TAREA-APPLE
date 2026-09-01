@@ -8,76 +8,85 @@
 
 ---
 
-## GIF bien bonito para que se vea acá bien bonito
+## Preview
 
 ![Bad Apple Gif](bad_apple_gif.gif)
 
 ---
 
 ## Tabla de Contenidos
-1. [Prefacio](#-prefacio)
-2. [Metodología de Desarrollo](#-metodología-de-desarrollo)
-3. [Historias de Usuario (Backlog)](#-historias-de-usuario-backlog)
-4. [Arquitectura del Proyecto](#-arquitectura-del-proyecto)
-5. [Características Principales](#-características-principales)
-6. [Requisitos e Instalación](#-requisitos-e-instalación)
-7. [Historial de Optimización y Rendimiento](#-historial-de-optimización-y-rendimiento)
-8. [Historial de Versiones](#-historial-de-versiones)
-9. [Estructura de Funciones](#-estructura-de-funciones)
-10. [Problemas Conocidos y Soluciones](#-problemas-conocidos-y-soluciones)
-11. [Agradecimientos](#-agradecimientos)
+1. [Descripción del Proyecto](#descripción-del-proyecto)
+2. [Selección de Metodología de Desarrollo](#selección-de-metodología-de-desarrollo)
+3. [Historias de Usuario (User Stories)](#historias-de-usuario-user-stories)
+4. [Arquitectura del Proyecto](#arquitectura-del-proyecto)
+5. [Instrucciones de Ejecución](#instrucciones-de-ejecución)
+6. [Historial de Optimización y Rendimiento](#historial-de-optimización-y-rendimiento)
+7. [Historial de Versiones](#historial-de-versiones)
+8. [Problemas Conocidos y Soluciones](#problemas-conocidos-y-soluciones)
+9. [Retrospectiva del Proyecto - Práctica 1](#retrospectiva-del-proyecto---práctica-1)
+10. [Agradecimientos & Créditos](#-agradecimientos--créditos)
 
 ---
 
-## Prefacio
+## Descripción del Proyecto
 
-Este proyecto nació como un experimento de fin de semana para compartir entre amigos y ha ido evolucionando a través de iteraciones continuas y aportes de la comunidad.
+Este proyecto es una aplicación modular basada en CLI desarrollada en Python para la extracción, procesamiento, conversión y renderizado en tiempo real del video musical **Bad Apple!!** en formato ASCII dentro de la terminal de comandos.
 
-> ! **Aviso de exención de responsabilidad:** Aunque el código final incluye adaptaciones propias, este proyecto es una amalgama de diversos fragmentos de código recopilados en línea. La idea de reproducir *Bad Apple!!* en la terminal no es novedosa y este repositorio no pretende ser el primero en su tipo, sino una versión optimizada y enfocada en el rendimiento.
+### Justificación de la Necesidad
+Elegimos este proyecto porque responde al reto técnico de optimizar el procesamiento multimedia en consola. Desde la perspectiva de la Ingeniería de Software, abordar este problema permite explorar y resolver cuellos de botella reales de entrada/salida (I/O) en disco, sincronización de hilos y procesos en paralelo, y gestión eficiente de memoria RAM para gráficos en tiempo real.
 
-► **Demo en video:** Puedes ver la demostración original subida a YouTube [haciendo clic aquí](https://www.youtube.com/watch?v=AZfrXrk3ZHc).
+> **Aviso de exención de responsabilidad:** Aunque el código final incluye adaptaciones propias, este proyecto es una amalgama de diversos fragmentos de código recopilados en línea. La idea de reproducir *Bad Apple!!* en la terminal no es novedosa; este repositorio se enfoca en el análisis, refactorización y optimización de rendimiento.
 
----
-
-##  Metodología de Desarrollo
-
-El proyecto se gestionó bajo un enfoque **Ágil (Iterativo e Incremental)** dividido en sprints cortos para abordar problemas de rendimiento y sincronización:
-
-* **Comunicación & Requerimientos:** Identificación de cuellos de botella (desfasaje de audio, ralentización por E/S en disco) reportados en los Issues de GitHub.
-* **Planeación Iterativa:** Priorización del backlog para migrar el procesamiento de almacenamiento físico a memoria RAM y corregir incompatibilidades en Linux.
-* **Modelado & Refactorización:** Rediseño del flujo de datos para saltar la creación de archivos temporales `.txt` y procesar directamente arrays de caracteres en RAM.
-* **Construcción:** Implementación de multiprocesamiento (`multiprocessing`), temporizadores de alta precisión (`fpstimer`) y reproducción con `pygame`.
-* **Cierre & Retrospectiva:** Pruebas de rendimiento en distintas plataformas e integración de soluciones aportadas por colaboradores externos.
+**Demo en video:** Puedes ver la demostración original subida a YouTube [haciendo clic aquí](https://www.youtube.com/watch?v=AZfrXrk3ZHc).
 
 ---
 
-## Historias de Usuario (Backlog)
+## Selección de Metodología de Desarrollo
 
-Para guiar las funcionalidades clave durante el desarrollo del proyecto, se definieron las siguientes Historias de Usuario (*User Stories*):
+### Enfoque Seleccionado: Metodología Ágil (Kanban)
+
+**Justificación:**
+1. **Duración y Flexibilidad:** Dado el marco de tiempo reducido de la práctica, un enfoque ágil nos permite trabajar con entregas incrementales y priorizar los módulos del sistema (audio, procesamiento de imágenes, sincronización FPS) de forma independiente.
+2. **Estructura Modular:** Al estar el proyecto dividido en componentes individuales (extracción de cuadros, renderizado ASCII, barra de progreso), Kanban facilita asignar cada funcionalidad mediante *Issues* en GitHub Projects.
+3. **Adaptabilidad:** Permite ajustar los requisitos y resolver fallos detectados durante las pruebas (como el desfasaje de tiempo o bloqueos en Linux) sin romper la planificación general.
+
+---
+
+## Historias de Usuario (User Stories)
+
+* **HU-01: Extracción y Procesamiento de Video**
+  * **Como** usuario del sistema,
+  * **Quiero** descomponer un archivo de video `.mp4` en fotogramas secuenciales,
+  * **Para** prepararlos para su posterior conversión a formato ASCII.
+
+* **HU-02: Conversión Gráfica a ASCII**
+  * **Como** desarrollador del motor gráfico,
+  * **Quiero** transformar cada fotograma a escala de grises y mapear los niveles de brillo a caracteres de texto,
+  * **Para** generar la representación visual en la terminal.
+
+* **HU-03: Sincronización de Audio y Frecuencia de Cuadros (FPS)**
+  * **Como** usuario final,
+  * **Quiero** que la reproducción del audio coincida de manera exacta con el renderizado visual,
+  * **Para** evitar acumulaciones de retraso (drift) durante la animación.
+
+* **HU-04: Optimización y Manejo en Memoria RAM**
+  * **Como** administrador del sistema,
+  * **Quiero** procesar las matrices ASCII directamente en memoria omitiendo archivos `.txt` en almacenamiento físico,
+  * **Para** eliminar el cuello de botella de E/S (I/O) y reducir los tiempos de carga previos a 10-15 segundos.
+
+---
+
+## Arquitectura del Proyecto
+
 ```text
-
-| ID | Historia de Usuario | Criterios de Aceptación | Estado |
-| :--- | :--- | :--- | :--- |
-| **US-01** | **Como** usuario final, **quiero** reproducir la animación de Bad Apple en la consola **para** ver el video musical en formato ASCII. | La animación debe desplegarse fotograma a fotograma directamente en la CLI. | `Completado` |
-| **US-02** | **Como** usuario final, **quiero** que el audio esté sincronizado con el video ASCII **para** evitar desfasajes durante la reproducción. | La música debe iniciar a la par con el video y mantenerse precisa usando temporizadores de precisión (`fpstimer`). | `Completado` |
-| **US-03** | **Como** desarrollador/usuario, **quiero** que el renderizado procese los fotogramas en RAM **para** eliminar la lentitud por lectura de archivos en disco. | Eliminación de archivos temporales `.txt` procesando la conversión de imágenes directamente en arreglos en memoria. | `Completado` |
-| **US-04** | **Como** usuario de Linux/Unix, **quiero** poder ejecutar el proyecto sin errores de reproducción de audio **para** usarlo en cualquier sistema operativo. | Migración de la librería `playsound` a `pygame` para evitar bloqueos del sistema. | `Completado` |
-| **US-05** | **Como** usuario avanzado, **quiero** poder especificar cualquier archivo de video propio **para** generar su animación ASCII personalizada. | El programa permite cargar y procesar archivos `.mp4` arbitrarios en la raíz del proyecto (`v4.5`). | `Completado` |
-
+.
+├── bad-apple/
+│   ├── modules/              # Módulos de procesamiento (ASCII, audio, video)
+│   │   ├── ascii_generator.py # Conversión de píxeles a caracteres ASCII
+│   │   ├── audio_player.py    # Motor de audio con Pygame
+│   │   └── utils.py           # Generador de barra de progreso
+│   ├── assets/                # Archivos multimedia (MP4, GIF)
+│   ├── touhou_bad_apple_v4.0.py # Motor ejecutable principal (RAM optimized)
+│   ├── requirements.txt       # Lista de dependencias del proyecto
+│   └── README.md              # Documentación del repositorio
 ---
-```
-##  Arquitectura del Proyecto
-
-El sistema sigue un flujo de canalización de procesamiento de video en tiempo real (*Pipeline Pattern*):
-
-```text
-┌──────────────┐     ┌──────────────────────┐     ┌─────────────────────┐
-│ Archivo MP4  │ ──> │ Extracción de Frames │ ──> │ Redimensionamiento  │
-└──────────────┘     │  (OpenCV / FFmpeg)   │     │ & Escala de Grises  │
-                     └──────────────────────┘     └─────────────────────┘
-                                                             │
-                                                             ▼
-┌──────────────┐     ┌──────────────────────┐     ┌─────────────────────┐
-│ Salida CLI   │ <── │ Sincronización FPS   │ <── │ Mapeo a Caracteres  │
-│ (Pantalla)   │     │ (fpstimer + Pygame)  │     │ ASCII en Memoria    │
-└──────────────┘     └──────────────────────┘     └─────────────────────┘
