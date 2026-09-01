@@ -90,3 +90,19 @@ Elegimos este proyecto porque responde al reto técnico de optimizar el procesam
 │   ├── requirements.txt       # Lista de dependencias del proyecto
 │   └── README.md              # Documentación del repositorio
 ---
+```
+
+```text
+## Diagrama de flujo del sistema
+
+┌──────────────┐     ┌──────────────────────┐     ┌─────────────────────┐
+│ Archivo MP4  │ ──> │ Extracción de Frames │ ──> │ Redimensionamiento  │
+└──────────────┘     │  (OpenCV / FFmpeg)   │     │ & Escala de Grises  │
+                     └──────────────────────┘     └─────────────────────┘
+                                                             │
+                                                             ▼
+┌──────────────┐     ┌──────────────────────┐     ┌─────────────────────┐
+│ Salida CLI   │ <── │ Sincronización FPS   │ <── │ Mapeo a Caracteres  │
+│ (Pantalla)   │     │ (fpstimer + Pygame)  │     │ ASCII en Memoria    │
+└──────────────┘     └──────────────────────┘     └─────────────────────┘
+```
