@@ -197,7 +197,6 @@ Implementar un archivo .gitignore adecuado desde el inicio para evitar subir fot
 Diseñar las interfaces pensando en el procesamiento directo en memoria RAM desde la etapa de modelado de arquitectura.
 
 ## Agradecimientos & Créditos
-
 ```text
 ==================================================================================================
  AGRADECIMIENTOS ESPECIALES & CRÉDITOS DE LA COMUNIDAD 
