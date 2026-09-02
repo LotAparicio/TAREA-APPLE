@@ -24,7 +24,7 @@
 7. [Historial de Versiones](#historial-de-versiones)
 8. [Problemas Conocidos y Soluciones](#problemas-conocidos-y-soluciones)
 9. [Retrospectiva del Proyecto - Práctica 1](#retrospectiva-del-proyecto---práctica-1)
-10. [Agradecimientos y Créditos](#agradecimientos-y-creditos)
+10. [Agradecimientos y Créditos](#agradecimientos-y-créditos)
 
 ---
 
