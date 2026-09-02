@@ -33,7 +33,7 @@
 Este proyecto es una aplicación modular basada en CLI desarrollada en Python para la extracción, procesamiento, conversión y renderizado en tiempo real del video musical **Bad Apple!!** en formato ASCII dentro de la terminal de comandos.
 
 ### Justificación de la Necesidad
-Elegimos este proyecto porque responde al reto técnico de optimizar el procesamiento multimedia en consola. Desde la perspectiva de la Ingeniería de Software, abordar este problema permite explorar y resolver cuellos de botella reales de entrada/salida (I/O) en disco, sincronización de hilos y procesos en paralelo, y gestión eficiente de memoria RAM para gráficos en tiempo real.
+Elegí este proyecto porque se me hizo divertido y responde al reto técnico de optimizar el procesamiento multimedia en consola. Desde la perspectiva de la Ingeniería de Software, abordar este problema permite explorar y resolver cuellos de botella reales de entrada/salida (I/O) en disco, sincronización de hilos y procesos en paralelo, y gestión eficiente de memoria RAM para gráficos en tiempo real.
 
 > **Aviso de exención de responsabilidad:** Aunque el código final incluye adaptaciones propias, este proyecto es una amalgama de diversos fragmentos de código recopilados en línea. La idea de reproducir *Bad Apple!!* en la terminal no es novedosa; este repositorio se enfoca en el análisis, refactorización y optimización de rendimiento.
 
