@@ -196,11 +196,11 @@ Incompatibilidades de la librería playsound en entornos Linux que requirieron r
 Implementar un archivo .gitignore adecuado desde el inicio para evitar subir fotogramas extraídos temporales o archivos .txt innecesarios al repositorio.
 Diseñar las interfaces pensando en el procesamiento directo en memoria RAM desde la etapa de modelado de arquitectura.
 
-
-==================================================================================================
-AGRADECIMIENTOS ESPECIALES & CRÉDITOS DE LA COMUNIDAD
-==================================================================================================
 ```text
+==================================================================================================
+ AGRADECIMIENTOS ESPECIALES & CRÉDITOS DE LA COMUNIDAD 
+=================================================================================================
+
 [ CREACIÓN & UNIVERSO ]
 • ZUN / Team Shanghai Alice
   Por la creación del extenso universo de Touhou Project, cimiento y origen de esta obra.
@@ -219,5 +219,5 @@ AGRADECIMIENTOS ESPECIALES & CRÉDITOS DE LA COMUNIDAD
 • JasperTecHK -> Pruebas de compatibilidad y soporte multiplataforma.
 • TheHusyin   -> Gestión de dependencias e integración del archivo requirements.txt.
 • Mirageofmage -> Retroalimentación y optimización del rendimiento en ejecución.
-```
 ==================================================================================================
+```
