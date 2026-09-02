@@ -196,6 +196,8 @@ Incompatibilidades de la librería playsound en entornos Linux que requirieron r
 Implementar un archivo .gitignore adecuado desde el inicio para evitar subir fotogramas extraídos temporales o archivos .txt innecesarios al repositorio.
 Diseñar las interfaces pensando en el procesamiento directo en memoria RAM desde la etapa de modelado de arquitectura.
 
+## AGRADECIMIENTOS ESPECIALES
+
 ```text
 ==================================================================================================
  AGRADECIMIENTOS ESPECIALES & CRÉDITOS DE LA COMUNIDAD 
