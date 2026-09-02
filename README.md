@@ -94,6 +94,8 @@ Elegimos este proyecto porque responde al reto técnico de optimizar el procesam
 
 ## Diagrama de flujo del sistema
 
+![DIAGRAMA-APPLE](DIAGRAMA-APPLE.PNG)
+
 ```text
 ┌──────────────┐     ┌──────────────────────┐     ┌─────────────────────┐
 │ Archivo MP4  │ ──> │ Extracción de Frames │ ──> │ Redimensionamiento  │
