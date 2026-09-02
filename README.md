@@ -197,9 +197,9 @@ Implementar un archivo .gitignore adecuado desde el inicio para evitar subir fot
 Diseñar las interfaces pensando en el procesamiento directo en memoria RAM desde la etapa de modelado de arquitectura.
 
 
-# ==================================================================================================
-# AGRADECIMIENTOS ESPECIALES & CRÉDITOS DE LA COMUNIDAD
-# ==================================================================================================
+==================================================================================================
+AGRADECIMIENTOS ESPECIALES & CRÉDITOS DE LA COMUNIDAD
+==================================================================================================
 ```text
 [ CREACIÓN & UNIVERSO ]
 • ZUN / Team Shanghai Alice
@@ -220,4 +220,4 @@ Diseñar las interfaces pensando en el procesamiento directo en memoria RAM desd
 • TheHusyin   -> Gestión de dependencias e integración del archivo requirements.txt.
 • Mirageofmage -> Retroalimentación y optimización del rendimiento en ejecución.
 ```
-# ==================================================================================================
+==================================================================================================
