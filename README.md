@@ -24,7 +24,7 @@
 7. [Historial de Versiones](#historial-de-versiones)
 8. [Problemas Conocidos y Soluciones](#problemas-conocidos-y-soluciones)
 9. [Retrospectiva del Proyecto - Práctica 1](#retrospectiva-del-proyecto---práctica-1)
-10. [Agradecimientos & Créditos](#-agradecimientos--créditos)
+10. [Agradecimientos & Créditos](#-Agradecimientos--Créditos)
 
 ---
 
@@ -198,7 +198,7 @@ Incompatibilidades de la librería playsound en entornos Linux que requirieron r
 Implementar un archivo .gitignore adecuado desde el inicio para evitar subir fotogramas extraídos temporales o archivos .txt innecesarios al repositorio.
 Diseñar las interfaces pensando en el procesamiento directo en memoria RAM desde la etapa de modelado de arquitectura.
 
-## Agradecimientos & Créditos
+## Agradecimientos--Créditos
 ```text
 ==================================================================================================
  AGRADECIMIENTOS ESPECIALES & CRÉDITOS DE LA COMUNIDAD 
